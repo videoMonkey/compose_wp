@@ -1,8 +1,15 @@
 {
+  "name": "Compose WP",
+  "type": "private",
+  "license": "mit",
+  "authors": [{
+    "name": "James Fehr",
+    "email": "jamiefehr@fastmail.es"
+  }],
   "repositories": [
   {
     "type": "composer",
-    "url": "http://wpackagist.org"
+    "url": "https://wpackagist.org"
   }
   ],
   "require": {
@@ -12,19 +19,21 @@
     "wpackagist-plugin/blackbox-debug-bar": "*",
     "wpackagist-plugin/contact-form-7": "*",
     "wpackagist-plugin/debug-bar": "*",
-    "wpackagist-plugin/editorial-calendar": "*",
     "wpackagist-plugin/enable-media-replace": "*",
-    "wpackagist-plugin/flamingo": "*",
     "wpackagist-plugin/jetpack": "*",
     "wpackagist-plugin/polylang": "*",
-    "wpackagist-plugin/postie": "*",
-    "wpackagist-plugin/types": "*",
     "wpackagist-plugin/theme-check": "*",
     "wpackagist-plugin/wordpress-seo": "*",
     "wpackagist-theme/twentysixteen": "*",
     "roots/wp-stage-switcher": "2.0.0"
   },
+  "require-dev": {},
   "extra": {
-    "wordpress-install-dir": "wp"
+    "wordpress-install-dir": "html/wp",
+    "installer-paths": {
+      "html/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "html/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "html/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+    }
   }
 }
